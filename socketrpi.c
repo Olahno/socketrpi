@@ -382,9 +382,8 @@ int main(int argc, char *argv[])
     puts("Connection accepted");
      
     //Receive a message from client
-while(1)
+while( (read_size = recv(client_sock , client_message , 2000 , 0)) > 0 )
     {
-	read_size = recv(client_sock , client_message , 2000 , 0);
         
 //Send the message back to client_mess
 	puts(client_message);
